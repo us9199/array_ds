@@ -1,0 +1,53 @@
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) 
+    {
+        //first
+    //    sort(nums.begin(),nums.end());
+    //     int i=0;
+    //     int j=1;
+    //     while(j<nums.size())
+    //     {
+    //         if(nums[i]==nums[j])
+    //         {
+    //             return true;
+    //             break;
+    //         }
+    //         i++;
+    //         j++;
+    //     }
+    //     return false;
+    // }
+        //second
+//         unordered_map<int,int>freq;
+//         for(auto x:nums)
+//         {
+            
+//             freq[x]++;
+//         }
+//         for(auto x:nums)
+//         {
+//             if(freq[x]>1)
+//             {
+//                 return true;
+//             }
+//         }
+//         return false;
+        
+//     }
+        unordered_map<int,int>freq;
+        
+        for(auto x:nums)
+        {
+            if(freq[x]==1)
+            {
+                return true;
+            }
+            else
+            {
+                freq[x]=1;
+            }
+        }
+        return false;
+    }
+};
